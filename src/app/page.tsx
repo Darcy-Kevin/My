@@ -53,7 +53,7 @@ export default function Home() {
                 src={`/${imgName}`} 
                 alt={`土豆的萌照 ${i + 1}`}
                 fill
-                unoptimized
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
