@@ -1,5 +1,6 @@
 import { Github, Mail, ExternalLink, Camera, Heart, PawPrint, Bone, Image as ImageIcon, Calendar, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -48,10 +49,12 @@ export default function Home() {
             "DSC04583.jpg"
           ].map((imgName, i) => (
             <div key={i} className="group aspect-square relative overflow-hidden rounded-2xl border bg-muted shadow-sm hover:shadow-xl transition-all duration-300">
-              <img 
+              <Image 
                 src={`/${imgName}`} 
                 alt={`土豆的萌照 ${i + 1}`}
-                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                fill
+                unoptimized
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <Heart className="text-white fill-white animate-pulse" />
