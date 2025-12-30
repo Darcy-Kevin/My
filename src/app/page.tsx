@@ -19,7 +19,7 @@ export default function Home() {
             达西 & <span className="text-orange-500">土豆</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-[600px] mx-auto mb-10 leading-relaxed">
-            你好，我是达西 (Darcy)。这里是记录我的好伙伴 —— 柴柴“土豆”成长点滴的数字空间。
+            我是达西 (Darcy)。这里是记录我的好伙伴 —— 柴柴“土豆”成长点滴的数字空间。
             我负责按快门，它负责卖萌。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
