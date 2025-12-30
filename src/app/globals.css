@@ -1,18 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #3b82f6;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --orange-500: #f97316;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050505;
+    --background: #0a0a0a;
     --foreground: #fafafa;
-    --accent: #60a5fa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
   }
 }
 
@@ -23,27 +28,73 @@ body {
   overflow-x: hidden;
 }
 
-/* 自定义动画 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@layer utilities {
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 }
 
 .animate-in {
+  opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* 渐变背景光晕 */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
 .glow {
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+  background: radial-gradient(circle, var(--glow-color, rgba(249, 115, 22, 0.15)) 0%, rgba(249, 115, 22, 0) 70%);
   border-radius: 50%;
-  filter: blur(40px);
+  filter: blur(60px);
   z-index: -1;
+  pointer-events: none;
+}
+
+/* 高级毛玻璃效果 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(20, 20, 20, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 浮动动画 */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(2deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+  100% { transform: translateY(0px) rotate(2deg); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-reverse {
+  animation: float 7s ease-in-out infinite reverse;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
