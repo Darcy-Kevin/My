@@ -16,7 +16,6 @@
 # misc
 .DS_Store
 *.pem
-optimize-images.mjs
 
 # debug
 npm-debug.log*
