@@ -19,6 +19,22 @@ export default function ProjectsPage() {
 
   const albums = [
     {
+      id: "25.6.1-nm",
+      name: "呼和浩特草原游记",
+      description: "25年夏天的呼和浩特，风是凉爽的。站在草原中央，四周是无边无际的绿，天空低得仿佛伸手就能触到云朵。",
+      info: ["2025.06", "内蒙古 · 呼和浩特"],
+      photos: getPhotoCount("25.6.1-nm"),
+      active: true,
+    },
+    {
+      id: "26.1.1-home",
+      name: "家里的惬意时光",
+      description: "新年第一天的午后，阳光穿过窗帘。那是家最温柔的时刻，记录下土豆在家里的各种慵懒瞬间。",
+      info: ["2026.01", "温暖的家"],
+      photos: getPhotoCount("26.1.1-home"),
+      active: true,
+    },
+    {
       id: "25.12.28-zgcpark",
       name: "冬日公园游记",
       description: "冬天的公园铺满了厚厚的落叶，土豆最喜欢的活动就是一头扎进叶子堆里“寻宝”。虽然鼻尖冻得通红，但她跑起来依然像个动力十足的小火球。",
